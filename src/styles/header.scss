@@ -1,0 +1,19 @@
+.header-div {
+  display: flex;
+  align-items: center;
+  background: rgb(37, 37, 37);
+  max-width: 1300px;
+  margin: auto;
+  & img {
+    cursor: pointer;
+  }
+}
+
+.header-input {
+  width: 70%;
+  height: 30px;
+  font-size: 26px;
+}
+.search-icon {
+  cursor: pointer;
+}

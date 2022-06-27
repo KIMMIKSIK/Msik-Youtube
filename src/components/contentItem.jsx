@@ -4,6 +4,7 @@ const ContentItem = ({ items, clickPage }) => {
   const { thumbnails, title } = items;
 
   console.log(thumbnails.medium.url);
+
   return (
     <>
       <li
@@ -13,7 +14,10 @@ const ContentItem = ({ items, clickPage }) => {
       >
         <div className="thumbnails">
           <img src={thumbnails.medium.url} alt={'유투브!'} />
-          <div>{title}</div>
+          <div>
+            <p>{title.substr(0, 30)}</p>
+            <p>{items.channelTitle}</p>
+          </div>
         </div>
       </li>
     </>

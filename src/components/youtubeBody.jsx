@@ -18,14 +18,18 @@ const YoutubeBody = () => {
 
   useEffect(() => {
     const fetch = async () => {
-      const response = await client.get(
-        '/videos?part=snippet&chart=mostPopular&maxResults=22&key=AIzaSyC1-jdINrmft24dEi7gCuXUHgXyf_zKWe0',
-      );
-      const data = response.data;
-      console.log(data);
-      const items = data.items;
-      console.log(items);
-      setItems(items);
+      try {
+        const response = await client.get(
+          '/videos?part=snippet&chart=mostPopular&maxResults=22&key=AIzaSyC1-jdINrmft24dEi7gCuXUHgXyf_zKWe0',
+        );
+        const data = response.data;
+        console.log(data);
+        const items = data.items;
+        console.log(items);
+        setItems(items);
+      } catch (e) {
+        console.log(e.message);
+      }
     };
     fetch();
   }, []);

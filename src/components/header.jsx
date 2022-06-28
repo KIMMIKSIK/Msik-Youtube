@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import '../styles/header.scss';
 import PropTypes from 'prop-types';
-const Header = ({ setClick }) => {
-  const reset = () => {
+const Header = ({ setClick, searchPage }) => {
+  const inputRef = useRef();
+  const handleEnter = () => {
     setClick(false);
+    searchPage(inputRef.current.value);
+    inputRef.current.value = '';
   };
+  const reset = () => {
+    handleEnter();
+  };
+  const onKeyPress = e => {
+    if (e.key === 'Enter') handleEnter();
+  };
+
   return (
     <div className="header-div">
       <img
@@ -14,18 +24,20 @@ const Header = ({ setClick }) => {
         width="140"
         onClick={reset}
       />
-      <input className="header-input"></input>
-      <img
-        className="search-icon"
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb8nUPHXjCbrQtwr-Q7RTyr0HRL013DToLfA&usqp=CAU"
-        width="34px"
-        onClick={reset}
-      />
+      <input ref={inputRef} className="header-input" onKeyPress={onKeyPress} />
+      <button>
+        <img
+          className="search-icon"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb8nUPHXjCbrQtwr-Q7RTyr0HRL013DToLfA&usqp=CAU"
+          width="34px"
+        />
+      </button>
     </div>
   );
 };
 Header.propTypes = {
   setClick: PropTypes.func,
+  searchPage: PropTypes.func,
 };
 
 export default Header;

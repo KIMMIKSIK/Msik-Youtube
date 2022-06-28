@@ -23,9 +23,9 @@ const Contents = ({ items, click, clickPage, video }) => {
         </section>
       ) : (
         <ul>
-          {items.map(contents => (
-            <ContentItem items={contents.snippet} key={contents.id} clickPage={clickPage} />
-          ))}
+          {items.map(contents => {
+            return <ContentItem items={contents.snippet} key={contents.id} clickPage={clickPage} />;
+          })}
         </ul>
       )}
     </div>

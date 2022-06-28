@@ -7,12 +7,24 @@
   & img {
     cursor: pointer;
   }
+  & button {
+    border: 1px solid black;
+    background: none;
+    padding: 0px;
+    padding-top: 1px;
+  }
+  & button:active {
+    border: 1px solid darkgray;
+  }
 }
 
 .header-input {
   width: 70%;
   height: 30px;
   font-size: 26px;
+  &:focus {
+    outline: none;
+  }
 }
 .search-icon {
   cursor: pointer;

@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Msik-Youtube/static/css/main.88854f05.css",
+    "main.js": "/Msik-Youtube/static/js/main.f3ed7172.js",
+    "index.html": "/Msik-Youtube/index.html",
+    "main.88854f05.css.map": "/Msik-Youtube/static/css/main.88854f05.css.map",
+    "main.f3ed7172.js.map": "/Msik-Youtube/static/js/main.f3ed7172.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.88854f05.css",
+    "static/js/main.f3ed7172.js"
+  ]
+}

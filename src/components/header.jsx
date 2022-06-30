@@ -35,6 +35,7 @@ const Header = function ({ setClick, searchPage, setInlineVideoId }) {
           className="search-icon"
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb8nUPHXjCbrQtwr-Q7RTyr0HRL013DToLfA&usqp=CAU"
           width="34px"
+          alt="클릭버튼"
         />
       </button>
     </div>

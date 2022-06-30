@@ -16,7 +16,7 @@ class Youtube {
     return (async () => {
       try {
         const response = await client.get('videos', {
-          params: { part: 'snippet', chart: 'mostPopular', maxResults: 20 },
+          params: { part: 'snippet', chart: 'mostPopular', maxResults: 14 },
         });
         const data = response.data;
         console.log(data, '처음받는 데이터입니다.');
@@ -31,7 +31,7 @@ class Youtube {
   // search는 fetch함수를 사용한 프로미스로 비동기 네트워크 통신을 사용하였습니다.
   async search(query) {
     return fetch(
-      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${query}&key=${this.key}`,
+      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=14&q=${query}&key=${this.key}`,
       this.getRequestOptions,
     )
       .then(response => response.json())

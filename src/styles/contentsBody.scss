@@ -13,28 +13,51 @@
     @content;
   }
 }
+.container {
+  display: flex;
+}
+.container-first {
+  flex: 1 1 70%;
+  padding: 8px;
+}
+.container-second {
+  flex: 1 1 30%;
+}
+
+#grid {
+  width: 46.7%;
+  @include medium() {
+    width: 100%;
+  }
+}
+#list {
+  width: 100%;
+}
 
 .contents-body {
-  display: flex;
-  & section {
-    display: flex;
-    @include mobile {
-      flex-wrap: wrap;
+  @include medium() {
+    display: block;
+    width: 100%;
+  }
+
+  article {
+    & h1 {
+      font-size: 30px;
+      margin-left: 10px;
     }
-    & ul {
-      & li {
-        width: 100%;
-        margin: 5px;
-      }
+    & h2 {
+      margin-left: 10px;
+    }
+    & .description {
+      white-space: pre-wrap;
+      margin-left: 10px;
     }
   }
   & ul {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
     padding: 0px;
     margin: 0px;
-
     & li {
       margin: 8px;
       padding: 10px;
@@ -43,14 +66,9 @@
       list-style: none;
       background: rgb(142, 142, 148);
       border: 1px solid black;
-      width: 46.5%;
       transition: 0.3s;
-
       box-shadow: 4px 4px 4px 4px lightgray;
-      @include medium() {
-        display: block;
-        width: 100%;
-      }
+
       & .thumbnails {
         display: flex;
         align-items: center;
@@ -73,21 +91,14 @@
         }
       }
     }
-  }
-
-  & li:hover {
-    cursor: pointer;
-    transform: scale(1.05);
+    & li:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
   }
 }
-.video-content {
-  padding: 2px;
-  max-width: 800px;
-  @include mobile {
-    min-width: 99%;
-  }
 
-  & video {
-    width: 100%;
-  }
+iframe {
+  width: 100%;
+  min-height: 450px;
 }

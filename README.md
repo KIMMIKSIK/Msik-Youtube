@@ -1,9 +1,11 @@
 <h1># 리액트 개인 프로젝트 두번째</h1>
 <h3>Msik 나만의 유튜브 제작</h3>
+링크:
 
-<img src="./src/assets/main.png" style="height: 250px"/>
+<div style="display:flex">
+<img src="./src/assets/main.png" style="height: 250px; margin-right:10px;"/>
 <img src="./src/assets/search.png" style="height: 250px"/>
-
+</div>
 ##### 구글 개발자 콘솔에서 제공해주는 api키를 받은 뒤 youtube api를 사용하여 제작하였다. 데이터의 일일 할당량이 존재하여 하루에 만개 이상의 데이터를 받으면 403에러(서버로 데이터는 전달되었지만 권한이 없어 접근 거부를 하는 에러)가 발생했다.... 태평양 기준시 자정이 되면 reset이 되는데 한국 시간으로 오후 4시였다.
 
 ## 🙋‍♀️ 프로젝트를 만들면서 배운점

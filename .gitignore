@@ -11,6 +11,8 @@
 # production
 /build
 
+# YOUTUBE_API_KEY
+.env
 
 # misc
 .DS_Store

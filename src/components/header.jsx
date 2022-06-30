@@ -1,23 +1,28 @@
 import React, { useRef } from 'react';
 import '../styles/header.scss';
 import PropTypes from 'prop-types';
-const Header = ({ setClick, searchPage }) => {
+const Header = function ({ setClick, searchPage, setInlineVideoId }) {
   const inputRef = useRef();
-  const handleEnter = () => {
-    setClick(false);
-    searchPage(inputRef.current.value);
-    inputRef.current.value = '';
+  const handleEnter = e => {
+    if (e.target.name === 'logo') {
+      searchPage('');
+      inputRef.current.value = '';
+    } else {
+      searchPage(inputRef.current.value);
+      inputRef.current.value = '';
+    }
   };
-  const reset = () => {
-    handleEnter();
+  const reset = e => {
+    handleEnter(e);
   };
   const onKeyPress = e => {
-    if (e.key === 'Enter') handleEnter();
+    if (e.key === 'Enter') handleEnter(e);
   };
 
   return (
     <div className="header-div">
       <img
+        name="logo"
         className="youtube-header-logo"
         src="https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202106/16/0bf38986-d90d-46fd-9736-325a68a750b4.jpg"
         alt="youtube"
@@ -25,7 +30,7 @@ const Header = ({ setClick, searchPage }) => {
         onClick={reset}
       />
       <input ref={inputRef} className="header-input" onKeyPress={onKeyPress} />
-      <button>
+      <button name="button" onClick={reset}>
         <img
           className="search-icon"
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb8nUPHXjCbrQtwr-Q7RTyr0HRL013DToLfA&usqp=CAU"
@@ -38,6 +43,7 @@ const Header = ({ setClick, searchPage }) => {
 Header.propTypes = {
   setClick: PropTypes.func,
   searchPage: PropTypes.func,
+  setInlineVideoId: PropTypes.func,
 };
 
 export default Header;

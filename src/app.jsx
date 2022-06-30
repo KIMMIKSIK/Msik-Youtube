@@ -1,4 +1,3 @@
-import './app.css';
 import React from 'react';
 import YoutubeBody from './components/youtubeBody';
 import PropTypes from 'prop-types';

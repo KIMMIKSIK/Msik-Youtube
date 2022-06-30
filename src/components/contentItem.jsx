@@ -1,31 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-const ContentItem = ({ items, clickPage }) => {
-  const { thumbnails, title } = items;
-
-  console.log(thumbnails.medium.url);
-
+const ContentItem = React.memo(function contentItem({ items, clickPage, display }) {
+  const { thumbnails, title } = items.snippet;
   return (
-    <>
-      <li
-        onClick={() => {
-          clickPage(items);
-        }}
-      >
-        <div className="thumbnails">
-          <img src={thumbnails.medium.url} alt={'유투브!'} />
-          <div>
-            <p>{title.substr(0, 30)}</p>
-            <p>{items.channelTitle}</p>
-          </div>
+    <li
+      id={display}
+      onClick={() => {
+        clickPage(items);
+      }}
+    >
+      <div className="thumbnails">
+        <img src={thumbnails.medium.url} alt={'유투브!'} />
+        <div>
+          <p>{title.substr(0, 30)}</p>
+          <p>{items.channelTitle}</p>
         </div>
-      </li>
-    </>
+      </div>
+    </li>
   );
-};
+});
 
 ContentItem.propTypes = {
   items: PropTypes.object,
   clickPage: PropTypes.func,
+  display: PropTypes.string,
 };
 export default ContentItem;

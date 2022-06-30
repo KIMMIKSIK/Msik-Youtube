@@ -2,32 +2,28 @@ import React from 'react';
 import '../styles/contentsBody.scss';
 import ContentItem from './contentItem';
 import PropTypes from 'prop-types';
+import VideoDetail from './video_detail';
 
-const Contents = ({ items, click, clickPage, video }) => {
+const Contents = ({ items, clickPage, inlineVideoId, display }) => {
   return (
-    <div className="contents-body">
-      {click ? (
-        <section>
-          <div className="video-content">
-            <video
-              src="blob:https://www.youtube.com/8bdee862-462f-47cb-b39d-35aed6d634f7"
-              controls
-            />
-            <div>{video}</div>
-          </div>
-          <ul>
-            {items.map(contents => (
-              <ContentItem items={contents.snippet} key={contents.id} clickPage={clickPage} />
-            ))}
-          </ul>
-        </section>
-      ) : (
-        <ul>
-          {items.map(contents => {
-            return <ContentItem items={contents.snippet} key={contents.id} clickPage={clickPage} />;
-          })}
-        </ul>
+    <div className="contents-body container">
+      {inlineVideoId && (
+        <div className="container-first">
+          <VideoDetail items={items} clickPage={clickPage} inlineVideoId={inlineVideoId} />
+        </div>
       )}
+      <ul className="container-second">
+        {items.map(contents => {
+          return (
+            <ContentItem
+              items={contents}
+              key={contents.id}
+              clickPage={clickPage}
+              display={display}
+            />
+          );
+        })}
+      </ul>
     </div>
   );
 };
@@ -35,8 +31,8 @@ const Contents = ({ items, click, clickPage, video }) => {
 Contents.propTypes = {
   items: PropTypes.array,
   clickPage: PropTypes.func,
-  click: PropTypes.bool,
-  video: PropTypes.string,
+  inlineVideoId: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  display: PropTypes.string,
 };
 
 export default Contents;

@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import '../styles/header.scss';
+import { MdSearch } from 'react-icons/md';
 import PropTypes from 'prop-types';
 const Header = function ({ setClick, searchPage, setInlineVideoId }) {
   const inputRef = useRef();
@@ -31,12 +32,7 @@ const Header = function ({ setClick, searchPage, setInlineVideoId }) {
       />
       <input ref={inputRef} className="header-input" onKeyPress={onKeyPress} />
       <button name="button" onClick={reset}>
-        <img
-          className="search-icon"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb8nUPHXjCbrQtwr-Q7RTyr0HRL013DToLfA&usqp=CAU"
-          width="34px"
-          alt="클릭버튼"
-        />
+        <MdSearch className="search-icon" />
       </button>
     </div>
   );

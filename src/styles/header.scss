@@ -8,14 +8,11 @@
     cursor: pointer;
   }
   & button {
-    border: 1px solid black;
+    border: none;
     margin-top: 1.6px;
     background: none;
     padding: 0px;
     padding-top: 1px;
-  }
-  & button:active {
-    border: 1px solid darkgray;
   }
 }
 .header-input {
@@ -29,4 +26,9 @@
 .search-icon {
   height: 35px;
   cursor: pointer;
+  color: white;
+  width: 50px;
+}
+.search-icon:hover {
+  transform: scale(1.2);
 }

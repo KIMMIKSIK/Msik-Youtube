@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Msik-Youtube/static/css/main.88b35a66.css",
-    "main.js": "/Msik-Youtube/static/js/main.f3ed7172.js",
+    "main.css": "/Msik-Youtube/static/css/main.1d86f797.css",
+    "main.js": "/Msik-Youtube/static/js/main.b6f87eaa.js",
     "index.html": "/Msik-Youtube/index.html",
-    "main.88b35a66.css.map": "/Msik-Youtube/static/css/main.88b35a66.css.map",
-    "main.f3ed7172.js.map": "/Msik-Youtube/static/js/main.f3ed7172.js.map"
+    "main.1d86f797.css.map": "/Msik-Youtube/static/css/main.1d86f797.css.map",
+    "main.b6f87eaa.js.map": "/Msik-Youtube/static/js/main.b6f87eaa.js.map"
   },
   "entrypoints": [
-    "static/css/main.88b35a66.css",
-    "static/js/main.f3ed7172.js"
+    "static/css/main.1d86f797.css",
+    "static/js/main.b6f87eaa.js"
   ]
 }

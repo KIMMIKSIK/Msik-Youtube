@@ -1,4 +1,4 @@
-<h1># 리액트 개인 프로젝트 두번째</h1>
+<h1># 리액트 프로젝트 두번째 연습</h1>
 <h3>Msik 나만의 유튜브 제작</h3>
 
 링크: https://kimmiksik.github.io/Msik-Youtube/
